@@ -1,0 +1,339 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  #task-list {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #add-task {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #task-input {
+    width: 100%;
+    max-width: 300px;
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #add-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #add-button:hover {
+    background-color: #555;
+  }
+  
+  #tasks {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #tasks li {
+    position: relative;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #tasks li:last-child {
+    border-bottom: none;
+  }
+  
+  #tasks li.completed {
+    text-decoration: line-through;
+    background-color: #d4edda;
+  }
+  
+  #tasks li:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .delete-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #ff3333;
+  }
+  
+  #tasks li:hover .delete-button {
+    opacity: 1;
+  }
+  
+  #tasks li:hover .mark-done {
+    opacity: 1;
+  }
+  
+  #tasks li.completed .mark-done:before {
+    opacity: 1;
+  }
+  
+  #mark-all-button, #delete-all-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #mark-all-button:hover, #delete-all-button:hover {
+    background-color: #555;
+  }
+  
+  .task-status {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .task-status.completed {
+    color: #4CAF50;
+  }
+  /* Existing CSS */
+  #tasks li:hover .mark-done {
+    opacity: 1;
+  }
+  
+  #tasks li.completed .mark-done:before {
+    opacity: 1;
+  }
+  
+  /* Additional CSS */
+  #tasks li {
+    position: relative;
+    padding: 10px 30px; /* Increased padding to ensure text is not overlapped by mark-done button */
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .task-status {
+    position: absolute;
+    top: 50%;
+    right: 30px; /* Adjusted right position to prevent overlap with mark-done button */
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .task-status.completed {
+    color: #4CAF50;
+  }
+/*================================================================================  */
+/* Existing CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  #task-list {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #add-task {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #task-input {
+    width: 100%;
+    max-width: 300px;
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #add-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #add-button:hover {
+    background-color: #555;
+  }
+  
+  #tasks {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #tasks li {
+    position: relative;
+    padding: 15px 30px; /* Adjusted padding to create space between radio button and task name */
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  #tasks li:last-child {
+    border-bottom: none;
+  }
+  
+  #tasks li.completed {
+    text-decoration: line-through;
+    background-color: #d4edda;
+  }
+  
+  #tasks li:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .delete-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #ff3333;
+  }
+  
+  #tasks li:hover .delete-button {
+    opacity: 1;
+  }
+  
+  .mark-done {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .mark-done:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  #tasks li:hover .mark-done {
+    opacity: 1;
+  }
+  
+  #tasks li.completed .mark-done:before {
+    opacity: 1;
+  }
+  
+  #mark-all-button,
+  #delete-all-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #mark-all-button:hover,
+  #delete-all-button:hover {
+    background-color: #555;
+  }
+  
+  .task-status {
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 180px); /* Adjusted left position to position near the task name */
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #333;
+  }  
+  .task-status.completed {
+    color: #4CAF50;
+  }
